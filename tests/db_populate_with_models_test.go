@@ -41,21 +41,20 @@ func TestDbPopulateWithModels(t *testing.T) {
 	}
 
 	// Create sample data
-	user := models.User{Name: "John Doe", Email: "john@example.com"}
-	tag := models.Tag{Color: "blue", Key: "dev", User: user}
-	timeSpan := models.TimeSpan{Start: time.Now().Add(-24 * time.Hour), End: time.Now(), User: user, Tags: []models.Tag{tag}}
-
 	// Insert data into the database
+	user := models.User{Name: "John Doe", Email: "john@example.com"}
 	err = initializers.DB.Create(&user).Error
 	if err != nil {
 		t.Fatal("Failed to create user:", err)
 	}
 
+	tag := models.Tag{Color: "blue", Key: "dev", User: user}
 	err = initializers.DB.Create(&tag).Error
 	if err != nil {
 		t.Fatal("Failed to create tag:", err)
 	}
 
+	timeSpan := models.TimeSpan{Start: time.Now().Add(-24 * time.Hour), End: time.Now(), User: user, Tags: []models.Tag{tag}}
 	err = initializers.DB.Create(&timeSpan).Error
 	if err != nil {
 		t.Fatal("Failed to create time span:", err)
