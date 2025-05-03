@@ -9,6 +9,9 @@ $ go get -u gorm.io/driver/postgres
 
 go get -u -- updates the package to the latest available version
 
+install gin
+go get -u github.com/gin-gonic/gin
+
 run
 
 go run cmd/main.go
