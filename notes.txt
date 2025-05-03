@@ -1,5 +1,20 @@
+install env package:
+
+$ go get github.com/joho/godotenv
+
+install gorm and postgres driver:
+
+$ go get -u gorm.io/gorm
+$ go get -u gorm.io/driver/postgres
+
+go get -u -- updates the package to the latest available version
+
+run
+
 go run cmd/main.go
 
 run specific test:
 
 go test -v -run TestEnvVar ./tests
+go test -v -run TestDbConnect ./tests
+
