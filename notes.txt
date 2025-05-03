@@ -1,0 +1,5 @@
+go run cmd/main.go
+
+run specific test:
+
+go test -v -run TestEnvVar ./tests
