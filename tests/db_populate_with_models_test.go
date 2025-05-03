@@ -28,7 +28,8 @@ func TestDbPopulateWithModels(t *testing.T) {
 	initializers.ConnectDB()
 
 	// Drop all the tables
-	err = initializers.DB.Migrator().DropTable(models.User{}, models.Tag{}, models.TimeSpan{})
+	// explicitly drop m2m timespan_tags because it's not dropped automatically
+	err = initializers.DB.Migrator().DropTable("timespan_tags", models.User{}, models.Tag{}, models.TimeSpan{})
 	if err != nil {
 		log.Fatal("Table dropping failed")
 	}
