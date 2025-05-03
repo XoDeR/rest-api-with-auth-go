@@ -17,4 +17,7 @@ run specific test:
 
 go test -v -run TestEnvVar ./tests
 go test -v -run TestDbConnect ./tests
+go test -v -run TestDbPopulateWithModels ./tests
+
+
 
