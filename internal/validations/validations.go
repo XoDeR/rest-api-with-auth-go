@@ -7,7 +7,7 @@ import (
 	"github.com/go-playground/validator/v10"
 )
 
-func IsUniqueValue(tableName, fieldName, value string) bool {
+func IsNotUniqueValue(tableName, fieldName, value string) bool {
 	var count int64
 
 	result := initializers.DB.Table(tableName).Where(fieldName+" = ?", value).Count(&count)
