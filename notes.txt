@@ -12,6 +12,10 @@ go get -u -- updates the package to the latest available version
 install gin
 go get -u github.com/gin-gonic/gin
 
+validator:
+
+go get github.com/go-playground/validator/v10
+
 run
 
 go run cmd/main.go
